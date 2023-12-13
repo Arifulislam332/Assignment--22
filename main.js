@@ -108,5 +108,28 @@ console.log(product4);
 
 // sort()
 const foods = ["noodles", "burger", "pasta", "chiken"];
-foods.sort();
-console.log(foods);
+foods.sort((a, b) => b.localeCompare(a));
+// foods.sort((a, b) => a.localeCompare(b));
+// console.log(foods);
+
+const shoppingCart = [
+  { id: 1, title: "Shirt", price: 800, rating: 4.7 },
+  { id: 2, title: "T-shirt", price: 450, rating: 5.0 },
+  { id: 3, title: "Jeans", price: 1500, rating: 4.8 },
+  { id: 4, title: "Shoes", price: 2250, rating: 4.4 },
+  { id: 5, title: "Wallet", price: 1000, rating: 4.8 },
+];
+const buyIteam = shoppingCart.sort((a, b) => a.price - b.price);
+
+console.log(buyIteam);
+
+// flat()
+const flatArr = [1, 6, 4, [45, 32, [5, [999], 9], 8]];
+
+const flatedArr = flatArr.flat(3).flatMap((el) => el + 4);
+console.log(flatedArr);
+
+// flatmap
+// const flatmapArr = flatedArr.flatMap((el, indx, arr) => el + 4);
+
+// console.log(flatmapArr);
